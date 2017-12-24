@@ -1,0 +1,27 @@
+version: '3'
+services:
+
+  discovery:
+    container_name: "discovery"
+    build: ./discovery
+
+  feed:
+    container_name: "feed"
+    build: ./twitter-feed
+    links:
+      - discovery
+      - log
+
+  feed-init:
+    container_name: "feed-init"
+    build: ./feed-init
+    links:
+      - discovery
+      - log
+      - feed
+
+  log:
+    container_name: "log"
+    build: ./logstashclient
+    links:
+      - discovery

@@ -1,0 +1,29 @@
+{
+  "name": "twitter-stack",
+  "version": "0.0.1",
+  "description": "",
+  "dependencies": {
+    "discovery": "file:./discovery",
+    "feed-init": "file:./feed-init",
+    "logstashclient": "file:./logstashclient",
+    "twitter-feed": "file:./twitter-feed",
+    "weplay-common": "github:iromu/weplay-common#develop"
+  },
+  "scripts": {
+    "build:log": "cd logstashclient && npm run build",
+    "build:feed": "cd twitter-feed && npm run build",
+    "build:init": "cd feed-init && npm run build",
+    "build:discovery": "cd discovery && npm run build",
+    "build": "npm run build:discovery && npm run build:feed && npm run build:init && npm run build:log",
+    "start:dev": "babel-node src/index.js"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.0.1",
+    "babel-preset-env": "^1.6.0",
+    "babel-register": "^6.26.0"
+  }
+}

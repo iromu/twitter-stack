@@ -1,0 +1,36 @@
+{
+  "name": "discovery",
+  "version": "0.0.1",
+  "description": "",
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "memwatch-next": "^0.3.0",
+    "restify": "^5.1.0",
+    "uuid": "^3.1.0",
+    "weplay-common": "github:iromu/weplay-common#develop"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
+    "babel-watch": "^2.0.7",
+    "es6-plato": "^1.0.14",
+    "eslint": "^4.3.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-react": "^7.0.1",
+    "eslint-plugin-standard": "^3.0.1"
+  },
+  "scripts": {
+    "start": "node build/index.js",
+    "start:dev": "babel-watch src/index.js",
+    "lint": "eslint src",
+    "plato": "es6-plato -r -d report/plato src",
+    "build": "babel src -d build",
+    "prepublish": "npm run build"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  }
+}
