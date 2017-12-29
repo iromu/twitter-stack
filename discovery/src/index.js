@@ -2,7 +2,7 @@ import {cleanup, Discovery, EventBus, LoggerFactory} from 'weplay-common'
 import memwatch from 'memwatch-next'
 
 const uuid = require('uuid/v1')()
-const logger = LoggerFactory.get('twitter-logstash-client', uuid)
+const logger = LoggerFactory.get('twitter-discovery', uuid)
 
 process.title = 'twitter-discovery'
 
