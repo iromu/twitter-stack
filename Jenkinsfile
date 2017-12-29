@@ -15,7 +15,7 @@ pipeline {
           stage('Docker twitter-feed'){
            agent { label 'docker'  }
            steps {
-               sh 'docker build --no-cache -t iromu/twitter-feed:latest ./kibana -f ./twitter-feed/Dockerfile'
+               sh 'docker build --no-cache -t iromu/twitter-feed:latest ./twitter-feed -f ./twitter-feed/Dockerfile'
                sh 'docker push iromu/twitter-feed:latest'
            }
           }
@@ -23,7 +23,7 @@ pipeline {
           stage('Docker feed-init'){
            agent { label 'docker'  }
            steps {
-               sh 'docker build --no-cache -t iromu/feed-init:latest ./logstash -f ./feed-init/Dockerfile'
+               sh 'docker build --no-cache -t iromu/feed-init:latest ./feed-init -f ./feed-init/Dockerfile'
                sh 'docker push iromu/feed-init:latest'
            }
           }
@@ -31,7 +31,7 @@ pipeline {
           stage('Docker logstashclient'){
            agent { label 'docker'  }
            steps {
-               sh 'docker build --no-cache -t iromu/logstashclient:latest ./logstash -f ./logstashclient/Dockerfile'
+               sh 'docker build --no-cache -t iromu/logstashclient:latest ./logstashclient -f ./logstashclient/Dockerfile'
                sh 'docker push iromu/logstashclient:latest'
            }
           }
