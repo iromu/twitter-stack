@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd ./discovery
+cd ./twitter-discovery
 npm update
 npm build
 

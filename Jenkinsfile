@@ -7,7 +7,7 @@ pipeline {
           stage('Docker twitter-discovery'){
            agent { label 'docker'  }
            steps {
-               sh 'docker build --no-cache -t iromu/twitter-discovery:latest ./discovery -f ./discovery/Dockerfile'
+               sh 'docker build --no-cache -t iromu/twitter-discovery:latest ./twitter-discovery -f ./twitter-discovery/Dockerfile'
                sh 'docker push iromu/twitter-discovery:latest'
            }
           }

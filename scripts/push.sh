@@ -4,7 +4,7 @@ cd "$(dirname "$0")"
 
 unset ${!DOCKER_*}
 
-declare -a arr=("discovery" "twitter-feed" "feed-init" "logstashclient")
+declare -a arr=("twitter-discovery" "twitter-feed" "feed-init" "logstashclient")
 
 for i in "${arr[@]}"
 do

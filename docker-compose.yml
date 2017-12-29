@@ -3,7 +3,7 @@ services:
 
   discovery:
     container_name: "discovery"
-    build: ./discovery
+    build: ./twitter-discovery
 
   feed:
     container_name: "feed"
