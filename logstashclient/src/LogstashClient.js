@@ -29,11 +29,11 @@ class LogstashClient {
     this.uuid = require('uuid/v1')()
     const listeners = {
       'data': (socket, data) => {
-        logStream.write(JSON.stringify(data) + '\n');
         if(!logstashDisabled)
           this.logstash.send(data)
         else
           logger.info(data)
+          logStream.write(JSON.stringify(data) + '\n');
       }
     }
     logger.info('LogstashClient connecting to ', logstashUri)
